@@ -29,7 +29,7 @@ export class AuthService implements OnModuleInit {
   }
 
   async register(dto: RegisterDto) {
-    const password = await bcryptjs.hash(dto.password.trim(), 10);
+    const password = dto.password.trim();
 
     const payload = {
       name: dto.name.trim(),
